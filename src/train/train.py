@@ -5,6 +5,7 @@ import sys
 from ..common.parser import set_parser
 from ..preprocess.load_data import load_data
 from ..model.models import build_MultiClassCNN_ex
+from tensorflow.keras.callbacks import CSVLogger, ModelCheckpoint
 
 def main(argv):
     parser = set_parser()

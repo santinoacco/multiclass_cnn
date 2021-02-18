@@ -27,13 +27,6 @@ def set_parser():
             help="verbosity level, default 1 == true.\
                     If true, prints std output on screen.")
 
-    # not implemented yet
-    global_parser.add(
-            '--loglevel',
-            required=False,
-            # default='warning',
-            help="Log level (info/debug/warning)")
-
     global_parser.add('-gO',
             '--g_outdir',
             env_var='GLOBAL_OUTDIR',
@@ -45,6 +38,26 @@ def set_parser():
             required=False,
             help='path to dir containing classes subdirs')
 
+    global_parser.add('-M',
+            '--model_path',
+            required=False,
+            help='path to model')
+
+    global_parser.add('-I',
+            '--input_img',
+            required=True,
+            help='path to img')
+
+    global_parser.add(
+            '--img_height',
+            required=False,
+            help='Height of the target image size, in pixels.')
+
+    global_parser.add(
+            '--img_width',
+            required=False,
+            help='Width of the target image size, in pixels.')
+
     # ==== PERFORMANCE TRAINNING==== #
     global_parser.add(
             '--use_img_augmentation',
@@ -54,29 +67,6 @@ def set_parser():
             )
 
     # ==== SAVING/LOADING MODEL ==== #
-    global_parser.add('-Swgt',
-            '--save_wgts_only',
-            action='store_true',
-            required=False,
-            help="(bool), wheather to save only model weights and architecture (True),\
-                    or (False) to save everything using SavedModel TF format.\
-                    Carefull support for TF_v1 is not ensured!"
-            )
-
-    global_parser.add('-Parch',
-            '--path_2arch',
-            required=False,
-            default=None,
-            help='(path)'
-            )
-
-    global_parser.add('-Pwgt',
-            '--path_2weights',
-            required=False,
-            default=None,
-            help='(path)'
-            )
-
     global_parser.add('-nEp',
             '--num_epochs',
             help="",)
