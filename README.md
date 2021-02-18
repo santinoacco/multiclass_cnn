@@ -8,7 +8,10 @@
     1. `samples_path` debe contener la direccion hacia el conjunto de datos (el llamado "dataset" en el jupyter notebook).
     2. `model_path` debe contener la direccion hacia la carpeta del modelo: `output_model`
     3. corroborar que los parametros de las imagenes son los mismos que los definidos en el jupyter notebook.
-4. Correr `predict.py`:
+4. Instalar dependencias, en una terminal correr:
+    1. `python3 -m install pip --upgrade --user`
+    2. `python3 -m pip install -r requirements.txt --user`
+5. Correr `predict.py`:
     1. ir a `src/`.
     2. correr `predict.py`:
         ```shell

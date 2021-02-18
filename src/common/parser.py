@@ -20,19 +20,6 @@ def set_parser():
             is_config_file=True,
             required=True)
 
-    global_parser.add('-V',
-            '--verbose',
-            required=False,
-            default=1,
-            help="verbosity level, default 1 == true.\
-                    If true, prints std output on screen.")
-
-    global_parser.add('-gO',
-            '--g_outdir',
-            env_var='GLOBAL_OUTDIR',
-            required=True,
-            help='Output directory for the whole package')
-
     global_parser.add('-S',
             '--samples_path',
             required=False,
@@ -103,40 +90,4 @@ def set_parser():
             help="callbacks dictionary")
 
     return global_parser.parse_args()
-
-# def set_ini_parser(config_file):
-    # cfg = configparser.ConfigParser()
-    # cfg.read(config_file)
-    # return cfg
-    # ==== OPTIONAL EXTRA I/O ==== #
-    # global_parser.add('--dp_in',
-            # required=False,
-            # default=None,
-            # help='Input directory for DataProcessing/')
-
-    # global_parser.add('--dp_out',
-            # required=False,
-            # default=None,
-            # help='Output directory for DataProcessing/')
-
-    # global_parser.add('--train_in',
-            # required=False,
-            # default=None,
-            # help='Input directory for NeuralNetworks/Train/')
-
-    # global_parser.add('--train_out',
-            # required=False,
-            # default=None,
-            # help='Output directory for NeuralNetworks/Train/')
-
-    # global_parser.add('--val_in',
-            # required=False,
-            # default=None,
-            # help='Input directory for NeuralNetworks/Train/')
-
-    # global_parser.add('--val_out',
-            # required=False,
-            # default=None,
-            # help='Output directory for NeuralNetworks/Train/')
-    #=========================== #
 
